@@ -1,0 +1,705 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="workflow_template_1" model="ai.workflow.template">
+            <field name="name">Auto Repair - Work Order</field>
+            <field name="sequence">10</field>
+            <field name="vertical_id">auto_repair</field>
+            <field name="template_key">work_order</field>
+            <field name="service_catalog_template">auto_repair.json</field>
+            <field name="tips">Track customer vehicle history. Set up parts inventory with auto-reorder thresholds.</field>
+            <field name="active" eval="True"/>
+            <field name="color">red</field>
+        </record>
+        <record id="workflow_template_2" model="ai.workflow.template">
+            <field name="name">Auto Repair - Diagnose</field>
+            <field name="sequence">20</field>
+            <field name="vertical_id">auto_repair</field>
+            <field name="template_key">diagnose</field>
+            <field name="service_catalog_template">auto_repair.json</field>
+            <field name="tips">Track customer vehicle history. Set up parts inventory with auto-reorder thresholds.</field>
+            <field name="active" eval="True"/>
+            <field name="color">red</field>
+        </record>
+        <record id="workflow_template_3" model="ai.workflow.template">
+            <field name="name">Auto Repair - Parts Order</field>
+            <field name="sequence">30</field>
+            <field name="vertical_id">auto_repair</field>
+            <field name="template_key">parts_order</field>
+            <field name="service_catalog_template">auto_repair.json</field>
+            <field name="tips">Track customer vehicle history. Set up parts inventory with auto-reorder thresholds.</field>
+            <field name="active" eval="True"/>
+            <field name="color">red</field>
+        </record>
+        <record id="workflow_template_4" model="ai.workflow.template">
+            <field name="name">Auto Repair - Repair</field>
+            <field name="sequence">40</field>
+            <field name="vertical_id">auto_repair</field>
+            <field name="template_key">repair</field>
+            <field name="service_catalog_template">auto_repair.json</field>
+            <field name="tips">Track customer vehicle history. Set up parts inventory with auto-reorder thresholds.</field>
+            <field name="active" eval="True"/>
+            <field name="color">red</field>
+        </record>
+        <record id="workflow_template_5" model="ai.workflow.template">
+            <field name="name">Auto Repair - Invoice</field>
+            <field name="sequence">50</field>
+            <field name="vertical_id">auto_repair</field>
+            <field name="template_key">invoice</field>
+            <field name="service_catalog_template">auto_repair.json</field>
+            <field name="tips">Track customer vehicle history. Set up parts inventory with auto-reorder thresholds.</field>
+            <field name="active" eval="True"/>
+            <field name="color">red</field>
+        </record>
+        <record id="workflow_template_6" model="ai.workflow.template">
+            <field name="name">Cleaning - Recurring Schedule</field>
+            <field name="sequence">10</field>
+            <field name="vertical_id">cleaning</field>
+            <field name="template_key">recurring_schedule</field>
+            <field name="service_catalog_template">cleaning.json</field>
+            <field name="tips">Use recurring job templates for weekly/bi-weekly customers. Auto-invoice after each cleaning visit.</field>
+            <field name="active" eval="True"/>
+            <field name="color">green</field>
+        </record>
+        <record id="workflow_template_7" model="ai.workflow.template">
+            <field name="name">Cleaning - Crew Dispatch</field>
+            <field name="sequence">20</field>
+            <field name="vertical_id">cleaning</field>
+            <field name="template_key">crew_dispatch</field>
+            <field name="service_catalog_template">cleaning.json</field>
+            <field name="tips">Use recurring job templates for weekly/bi-weekly customers. Auto-invoice after each cleaning visit.</field>
+            <field name="active" eval="True"/>
+            <field name="color">green</field>
+        </record>
+        <record id="workflow_template_8" model="ai.workflow.template">
+            <field name="name">Cleaning - Quality Check</field>
+            <field name="sequence">30</field>
+            <field name="vertical_id">cleaning</field>
+            <field name="template_key">quality_check</field>
+            <field name="service_catalog_template">cleaning.json</field>
+            <field name="tips">Use recurring job templates for weekly/bi-weekly customers. Auto-invoice after each cleaning visit.</field>
+            <field name="active" eval="True"/>
+            <field name="color">green</field>
+        </record>
+        <record id="workflow_template_9" model="ai.workflow.template">
+            <field name="name">Cleaning - Auto Invoice</field>
+            <field name="sequence">40</field>
+            <field name="vertical_id">cleaning</field>
+            <field name="template_key">auto_invoice</field>
+            <field name="service_catalog_template">cleaning.json</field>
+            <field name="tips">Use recurring job templates for weekly/bi-weekly customers. Auto-invoice after each cleaning visit.</field>
+            <field name="active" eval="True"/>
+            <field name="color">green</field>
+        </record>
+        <record id="workflow_template_10" model="ai.workflow.template">
+            <field name="name">Consulting - Project</field>
+            <field name="sequence">10</field>
+            <field name="vertical_id">consulting</field>
+            <field name="template_key">project</field>
+            <field name="service_catalog_template">consulting.json</field>
+            <field name="tips">Use retainer templates for recurring monthly billing. Track billable vs non-billable hours.</field>
+            <field name="active" eval="True"/>
+            <field name="color">blue</field>
+        </record>
+        <record id="workflow_template_11" model="ai.workflow.template">
+            <field name="name">Consulting - Time Track</field>
+            <field name="sequence">20</field>
+            <field name="vertical_id">consulting</field>
+            <field name="template_key">time_track</field>
+            <field name="service_catalog_template">consulting.json</field>
+            <field name="tips">Use retainer templates for recurring monthly billing. Track billable vs non-billable hours.</field>
+            <field name="active" eval="True"/>
+            <field name="color">blue</field>
+        </record>
+        <record id="workflow_template_12" model="ai.workflow.template">
+            <field name="name">Consulting - Milestone</field>
+            <field name="sequence">30</field>
+            <field name="vertical_id">consulting</field>
+            <field name="template_key">milestone</field>
+            <field name="service_catalog_template">consulting.json</field>
+            <field name="tips">Use retainer templates for recurring monthly billing. Track billable vs non-billable hours.</field>
+            <field name="active" eval="True"/>
+            <field name="color">blue</field>
+        </record>
+        <record id="workflow_template_13" model="ai.workflow.template">
+            <field name="name">Consulting - Invoice</field>
+            <field name="sequence">40</field>
+            <field name="vertical_id">consulting</field>
+            <field name="template_key">invoice</field>
+            <field name="service_catalog_template">consulting.json</field>
+            <field name="tips">Use retainer templates for recurring monthly billing. Track billable vs non-billable hours.</field>
+            <field name="active" eval="True"/>
+            <field name="color">blue</field>
+        </record>
+        <record id="workflow_template_14" model="ai.workflow.template">
+            <field name="name">Consulting - Payment</field>
+            <field name="sequence">50</field>
+            <field name="vertical_id">consulting</field>
+            <field name="template_key">payment</field>
+            <field name="service_catalog_template">consulting.json</field>
+            <field name="tips">Use retainer templates for recurring monthly billing. Track billable vs non-billable hours.</field>
+            <field name="active" eval="True"/>
+            <field name="color">blue</field>
+        </record>
+        <record id="workflow_template_15" model="ai.workflow.template">
+            <field name="name">Electrical - Permit Check</field>
+            <field name="sequence">10</field>
+            <field name="vertical_id">electrical</field>
+            <field name="template_key">permit_check</field>
+            <field name="service_catalog_template">electrical.json</field>
+            <field name="tips">Track electrical permits and code compliance for each job. Set up recurring inspection workflows.</field>
+            <field name="active" eval="True"/>
+            <field name="color">yellow</field>
+        </record>
+        <record id="workflow_template_16" model="ai.workflow.template">
+            <field name="name">Electrical - Job Workflow</field>
+            <field name="sequence">20</field>
+            <field name="vertical_id">electrical</field>
+            <field name="template_key">job_workflow</field>
+            <field name="service_catalog_template">electrical.json</field>
+            <field name="tips">Track electrical permits and code compliance for each job. Set up recurring inspection workflows.</field>
+            <field name="active" eval="True"/>
+            <field name="color">yellow</field>
+        </record>
+        <record id="workflow_template_17" model="ai.workflow.template">
+            <field name="name">Electrical - Inspection</field>
+            <field name="sequence">30</field>
+            <field name="vertical_id">electrical</field>
+            <field name="template_key">inspection</field>
+            <field name="service_catalog_template">electrical.json</field>
+            <field name="tips">Track electrical permits and code compliance for each job. Set up recurring inspection workflows.</field>
+            <field name="active" eval="True"/>
+            <field name="color">yellow</field>
+        </record>
+        <record id="workflow_template_18" model="ai.workflow.template">
+            <field name="name">Electrical - Invoice</field>
+            <field name="sequence">40</field>
+            <field name="vertical_id">electrical</field>
+            <field name="template_key">invoice</field>
+            <field name="service_catalog_template">electrical.json</field>
+            <field name="tips">Track electrical permits and code compliance for each job. Set up recurring inspection workflows.</field>
+            <field name="active" eval="True"/>
+            <field name="color">yellow</field>
+        </record>
+        <record id="workflow_template_19" model="ai.workflow.template">
+            <field name="name">General Contractor - Bid</field>
+            <field name="sequence">10</field>
+            <field name="vertical_id">general_contractor</field>
+            <field name="template_key">bid</field>
+            <field name="service_catalog_template">contractor.json</field>
+            <field name="tips">Track permits and inspections per project. Use milestone-based invoicing for large projects.</field>
+            <field name="active" eval="True"/>
+            <field name="color">purple</field>
+        </record>
+        <record id="workflow_template_20" model="ai.workflow.template">
+            <field name="name">General Contractor - Estimate</field>
+            <field name="sequence">20</field>
+            <field name="vertical_id">general_contractor</field>
+            <field name="template_key">estimate</field>
+            <field name="service_catalog_template">contractor.json</field>
+            <field name="tips">Track permits and inspections per project. Use milestone-based invoicing for large projects.</field>
+            <field name="active" eval="True"/>
+            <field name="color">purple</field>
+        </record>
+        <record id="workflow_template_21" model="ai.workflow.template">
+            <field name="name">General Contractor - Contract</field>
+            <field name="sequence">30</field>
+            <field name="vertical_id">general_contractor</field>
+            <field name="template_key">contract</field>
+            <field name="service_catalog_template">contractor.json</field>
+            <field name="tips">Track permits and inspections per project. Use milestone-based invoicing for large projects.</field>
+            <field name="active" eval="True"/>
+            <field name="color">purple</field>
+        </record>
+        <record id="workflow_template_22" model="ai.workflow.template">
+            <field name="name">General Contractor - Schedule</field>
+            <field name="sequence">40</field>
+            <field name="vertical_id">general_contractor</field>
+            <field name="template_key">schedule</field>
+            <field name="service_catalog_template">contractor.json</field>
+            <field name="tips">Track permits and inspections per project. Use milestone-based invoicing for large projects.</field>
+            <field name="active" eval="True"/>
+            <field name="color">purple</field>
+        </record>
+        <record id="workflow_template_23" model="ai.workflow.template">
+            <field name="name">General Contractor - Build</field>
+            <field name="sequence">50</field>
+            <field name="vertical_id">general_contractor</field>
+            <field name="template_key">build</field>
+            <field name="service_catalog_template">contractor.json</field>
+            <field name="tips">Track permits and inspections per project. Use milestone-based invoicing for large projects.</field>
+            <field name="active" eval="True"/>
+            <field name="color">purple</field>
+        </record>
+        <record id="workflow_template_24" model="ai.workflow.template">
+            <field name="name">General Contractor - Invoice</field>
+            <field name="sequence">60</field>
+            <field name="vertical_id">general_contractor</field>
+            <field name="template_key">invoice</field>
+            <field name="service_catalog_template">contractor.json</field>
+            <field name="tips">Track permits and inspections per project. Use milestone-based invoicing for large projects.</field>
+            <field name="active" eval="True"/>
+            <field name="color">purple</field>
+        </record>
+        <record id="workflow_template_25" model="ai.workflow.template">
+            <field name="name">Hvac - Job To Invoice</field>
+            <field name="sequence">10</field>
+            <field name="vertical_id">hvac</field>
+            <field name="template_key">job_to_invoice</field>
+            <field name="service_catalog_template">hvac.json</field>
+            <field name="tips">Set up recurring maintenance contracts for seasonal customers. Use dispatch routing to optimize technician travel.</field>
+            <field name="active" eval="True"/>
+            <field name="color">blue</field>
+        </record>
+        <record id="workflow_template_26" model="ai.workflow.template">
+            <field name="name">Hvac - Invoice To Payment</field>
+            <field name="sequence">20</field>
+            <field name="vertical_id">hvac</field>
+            <field name="template_key">invoice_to_payment</field>
+            <field name="service_catalog_template">hvac.json</field>
+            <field name="tips">Set up recurring maintenance contracts for seasonal customers. Use dispatch routing to optimize technician travel.</field>
+            <field name="active" eval="True"/>
+            <field name="color">blue</field>
+        </record>
+        <record id="workflow_template_27" model="ai.workflow.template">
+            <field name="name">Hvac - Payment To Qb Sync</field>
+            <field name="sequence">30</field>
+            <field name="vertical_id">hvac</field>
+            <field name="template_key">payment_to_qb_sync</field>
+            <field name="service_catalog_template">hvac.json</field>
+            <field name="tips">Set up recurring maintenance contracts for seasonal customers. Use dispatch routing to optimize technician travel.</field>
+            <field name="active" eval="True"/>
+            <field name="color">blue</field>
+        </record>
+        <record id="workflow_template_28" model="ai.workflow.template">
+            <field name="name">It Services - Ticket</field>
+            <field name="sequence">10</field>
+            <field name="vertical_id">it_services</field>
+            <field name="template_key">ticket</field>
+            <field name="service_catalog_template">it_services.json</field>
+            <field name="tips">Track SLA compliance and response times. Set up recurring billing for managed services.</field>
+            <field name="active" eval="True"/>
+            <field name="color">lime</field>
+        </record>
+        <record id="workflow_template_29" model="ai.workflow.template">
+            <field name="name">It Services - Sla Track</field>
+            <field name="sequence">20</field>
+            <field name="vertical_id">it_services</field>
+            <field name="template_key">sla_track</field>
+            <field name="service_catalog_template">it_services.json</field>
+            <field name="tips">Track SLA compliance and response times. Set up recurring billing for managed services.</field>
+            <field name="active" eval="True"/>
+            <field name="color">lime</field>
+        </record>
+        <record id="workflow_template_30" model="ai.workflow.template">
+            <field name="name">It Services - Onboard</field>
+            <field name="sequence">30</field>
+            <field name="vertical_id">it_services</field>
+            <field name="template_key">onboard</field>
+            <field name="service_catalog_template">it_services.json</field>
+            <field name="tips">Track SLA compliance and response times. Set up recurring billing for managed services.</field>
+            <field name="active" eval="True"/>
+            <field name="color">lime</field>
+        </record>
+        <record id="workflow_template_31" model="ai.workflow.template">
+            <field name="name">It Services - Recurring Bill</field>
+            <field name="sequence">40</field>
+            <field name="vertical_id">it_services</field>
+            <field name="template_key">recurring_bill</field>
+            <field name="service_catalog_template">it_services.json</field>
+            <field name="tips">Track SLA compliance and response times. Set up recurring billing for managed services.</field>
+            <field name="active" eval="True"/>
+            <field name="color">lime</field>
+        </record>
+        <record id="workflow_template_32" model="ai.workflow.template">
+            <field name="name">Landscaping - Seasonal Schedule</field>
+            <field name="sequence">10</field>
+            <field name="vertical_id">landscaping</field>
+            <field name="template_key">seasonal_schedule</field>
+            <field name="service_catalog_template">landscaping.json</field>
+            <field name="tips">Track equipment maintenance schedules. Set up seasonal contract templates for recurring revenue.</field>
+            <field name="active" eval="True"/>
+            <field name="color">green</field>
+        </record>
+        <record id="workflow_template_33" model="ai.workflow.template">
+            <field name="name">Landscaping - Crew Dispatch</field>
+            <field name="sequence">20</field>
+            <field name="vertical_id">landscaping</field>
+            <field name="template_key">crew_dispatch</field>
+            <field name="service_catalog_template">landscaping.json</field>
+            <field name="tips">Track equipment maintenance schedules. Set up seasonal contract templates for recurring revenue.</field>
+            <field name="active" eval="True"/>
+            <field name="color">green</field>
+        </record>
+        <record id="workflow_template_34" model="ai.workflow.template">
+            <field name="name">Landscaping - Materials Order</field>
+            <field name="sequence">30</field>
+            <field name="vertical_id">landscaping</field>
+            <field name="template_key">materials_order</field>
+            <field name="service_catalog_template">landscaping.json</field>
+            <field name="tips">Track equipment maintenance schedules. Set up seasonal contract templates for recurring revenue.</field>
+            <field name="active" eval="True"/>
+            <field name="color">green</field>
+        </record>
+        <record id="workflow_template_35" model="ai.workflow.template">
+            <field name="name">Landscaping - Invoice</field>
+            <field name="sequence">40</field>
+            <field name="vertical_id">landscaping</field>
+            <field name="template_key">invoice</field>
+            <field name="service_catalog_template">landscaping.json</field>
+            <field name="tips">Track equipment maintenance schedules. Set up seasonal contract templates for recurring revenue.</field>
+            <field name="active" eval="True"/>
+            <field name="color">green</field>
+        </record>
+        <record id="workflow_template_36" model="ai.workflow.template">
+            <field name="name">Marketing - Campaign</field>
+            <field name="sequence">10</field>
+            <field name="vertical_id">marketing</field>
+            <field name="template_key">campaign</field>
+            <field name="service_catalog_template">marketing.json</field>
+            <field name="tips">Use retainer templates for recurring monthly billing. Track campaign deliverables and deadlines.</field>
+            <field name="active" eval="True"/>
+            <field name="color">magenta</field>
+        </record>
+        <record id="workflow_template_37" model="ai.workflow.template">
+            <field name="name">Marketing - Deliverable</field>
+            <field name="sequence">20</field>
+            <field name="vertical_id">marketing</field>
+            <field name="template_key">deliverable</field>
+            <field name="service_catalog_template">marketing.json</field>
+            <field name="tips">Use retainer templates for recurring monthly billing. Track campaign deliverables and deadlines.</field>
+            <field name="active" eval="True"/>
+            <field name="color">magenta</field>
+        </record>
+        <record id="workflow_template_38" model="ai.workflow.template">
+            <field name="name">Marketing - Time Track</field>
+            <field name="sequence">30</field>
+            <field name="vertical_id">marketing</field>
+            <field name="template_key">time_track</field>
+            <field name="service_catalog_template">marketing.json</field>
+            <field name="tips">Use retainer templates for recurring monthly billing. Track campaign deliverables and deadlines.</field>
+            <field name="active" eval="True"/>
+            <field name="color">magenta</field>
+        </record>
+        <record id="workflow_template_39" model="ai.workflow.template">
+            <field name="name">Marketing - Retainer Invoice</field>
+            <field name="sequence">40</field>
+            <field name="vertical_id">marketing</field>
+            <field name="template_key">retainer_invoice</field>
+            <field name="service_catalog_template">marketing.json</field>
+            <field name="tips">Use retainer templates for recurring monthly billing. Track campaign deliverables and deadlines.</field>
+            <field name="active" eval="True"/>
+            <field name="color">magenta</field>
+        </record>
+        <record id="workflow_template_40" model="ai.workflow.template">
+            <field name="name">Medical - Appointment</field>
+            <field name="sequence">10</field>
+            <field name="vertical_id">medical</field>
+            <field name="template_key">appointment</field>
+            <field name="service_catalog_template">medical.json</field>
+            <field name="tips">Track patient appointments and insurance claims. Set up HIPAA compliance workflows.</field>
+            <field name="active" eval="True"/>
+            <field name="color">sky</field>
+        </record>
+        <record id="workflow_template_41" model="ai.workflow.template">
+            <field name="name">Medical - Visit</field>
+            <field name="sequence">20</field>
+            <field name="vertical_id">medical</field>
+            <field name="template_key">visit</field>
+            <field name="service_catalog_template">medical.json</field>
+            <field name="tips">Track patient appointments and insurance claims. Set up HIPAA compliance workflows.</field>
+            <field name="active" eval="True"/>
+            <field name="color">sky</field>
+        </record>
+        <record id="workflow_template_42" model="ai.workflow.template">
+            <field name="name">Medical - Insurance Bill</field>
+            <field name="sequence">30</field>
+            <field name="vertical_id">medical</field>
+            <field name="template_key">insurance_bill</field>
+            <field name="service_catalog_template">medical.json</field>
+            <field name="tips">Track patient appointments and insurance claims. Set up HIPAA compliance workflows.</field>
+            <field name="active" eval="True"/>
+            <field name="color">sky</field>
+        </record>
+        <record id="workflow_template_43" model="ai.workflow.template">
+            <field name="name">Medical - Payment</field>
+            <field name="sequence">40</field>
+            <field name="vertical_id">medical</field>
+            <field name="template_key">payment</field>
+            <field name="service_catalog_template">medical.json</field>
+            <field name="tips">Track patient appointments and insurance claims. Set up HIPAA compliance workflows.</field>
+            <field name="active" eval="True"/>
+            <field name="color">sky</field>
+        </record>
+        <record id="workflow_template_44" model="ai.workflow.template">
+            <field name="name">Plumbing - Emergency Dispatch</field>
+            <field name="sequence">10</field>
+            <field name="vertical_id">plumbing</field>
+            <field name="template_key">emergency_dispatch</field>
+            <field name="service_catalog_template">plumbing.json</field>
+            <field name="tips">Track water heater installations and warranty periods. Set up emergency after-hours dispatch routing.</field>
+            <field name="active" eval="True"/>
+            <field name="color">cyan</field>
+        </record>
+        <record id="workflow_template_45" model="ai.workflow.template">
+            <field name="name">Plumbing - Diagnose Repair</field>
+            <field name="sequence">20</field>
+            <field name="vertical_id">plumbing</field>
+            <field name="template_key">diagnose_repair</field>
+            <field name="service_catalog_template">plumbing.json</field>
+            <field name="tips">Track water heater installations and warranty periods. Set up emergency after-hours dispatch routing.</field>
+            <field name="active" eval="True"/>
+            <field name="color">cyan</field>
+        </record>
+        <record id="workflow_template_46" model="ai.workflow.template">
+            <field name="name">Plumbing - Parts Order</field>
+            <field name="sequence">30</field>
+            <field name="vertical_id">plumbing</field>
+            <field name="template_key">parts_order</field>
+            <field name="service_catalog_template">plumbing.json</field>
+            <field name="tips">Track water heater installations and warranty periods. Set up emergency after-hours dispatch routing.</field>
+            <field name="active" eval="True"/>
+            <field name="color">cyan</field>
+        </record>
+        <record id="workflow_template_47" model="ai.workflow.template">
+            <field name="name">Plumbing - Invoice Payment</field>
+            <field name="sequence">40</field>
+            <field name="vertical_id">plumbing</field>
+            <field name="template_key">invoice_payment</field>
+            <field name="service_catalog_template">plumbing.json</field>
+            <field name="tips">Track water heater installations and warranty periods. Set up emergency after-hours dispatch routing.</field>
+            <field name="active" eval="True"/>
+            <field name="color">cyan</field>
+        </record>
+        <record id="workflow_template_48" model="ai.workflow.template">
+            <field name="name">Property Management - Maintenance Request</field>
+            <field name="sequence">10</field>
+            <field name="vertical_id">property_management</field>
+            <field name="template_key">maintenance_request</field>
+            <field name="service_catalog_template">property_mgmt.json</field>
+            <field name="tips">Set up automated rent collection via Stripe. Track lease renewals and maintenance history per property.</field>
+            <field name="active" eval="True"/>
+            <field name="color">teal</field>
+        </record>
+        <record id="workflow_template_49" model="ai.workflow.template">
+            <field name="name">Property Management - Assign Vendor</field>
+            <field name="sequence">20</field>
+            <field name="vertical_id">property_management</field>
+            <field name="template_key">assign_vendor</field>
+            <field name="service_catalog_template">property_mgmt.json</field>
+            <field name="tips">Set up automated rent collection via Stripe. Track lease renewals and maintenance history per property.</field>
+            <field name="active" eval="True"/>
+            <field name="color">teal</field>
+        </record>
+        <record id="workflow_template_50" model="ai.workflow.template">
+            <field name="name">Property Management - Complete</field>
+            <field name="sequence">30</field>
+            <field name="vertical_id">property_management</field>
+            <field name="template_key">complete</field>
+            <field name="service_catalog_template">property_mgmt.json</field>
+            <field name="tips">Set up automated rent collection via Stripe. Track lease renewals and maintenance history per property.</field>
+            <field name="active" eval="True"/>
+            <field name="color">teal</field>
+        </record>
+        <record id="workflow_template_51" model="ai.workflow.template">
+            <field name="name">Property Management - Invoice</field>
+            <field name="sequence">40</field>
+            <field name="vertical_id">property_management</field>
+            <field name="template_key">invoice</field>
+            <field name="service_catalog_template">property_mgmt.json</field>
+            <field name="tips">Set up automated rent collection via Stripe. Track lease renewals and maintenance history per property.</field>
+            <field name="active" eval="True"/>
+            <field name="color">teal</field>
+        </record>
+        <record id="workflow_template_52" model="ai.workflow.template">
+            <field name="name">Real Estate - Listing</field>
+            <field name="sequence">10</field>
+            <field name="vertical_id">real_estate</field>
+            <field name="template_key">listing</field>
+            <field name="service_catalog_template">real_estate.json</field>
+            <field name="tips">Track commission splits and closing dates. Set up automated follow-up workflows for leads.</field>
+            <field name="active" eval="True"/>
+            <field name="color">amber</field>
+        </record>
+        <record id="workflow_template_53" model="ai.workflow.template">
+            <field name="name">Real Estate - Lead</field>
+            <field name="sequence">20</field>
+            <field name="vertical_id">real_estate</field>
+            <field name="template_key">lead</field>
+            <field name="service_catalog_template">real_estate.json</field>
+            <field name="tips">Track commission splits and closing dates. Set up automated follow-up workflows for leads.</field>
+            <field name="active" eval="True"/>
+            <field name="color">amber</field>
+        </record>
+        <record id="workflow_template_54" model="ai.workflow.template">
+            <field name="name">Real Estate - Offer</field>
+            <field name="sequence">30</field>
+            <field name="vertical_id">real_estate</field>
+            <field name="template_key">offer</field>
+            <field name="service_catalog_template">real_estate.json</field>
+            <field name="tips">Track commission splits and closing dates. Set up automated follow-up workflows for leads.</field>
+            <field name="active" eval="True"/>
+            <field name="color">amber</field>
+        </record>
+        <record id="workflow_template_55" model="ai.workflow.template">
+            <field name="name">Real Estate - Closing</field>
+            <field name="sequence">40</field>
+            <field name="vertical_id">real_estate</field>
+            <field name="template_key">closing</field>
+            <field name="service_catalog_template">real_estate.json</field>
+            <field name="tips">Track commission splits and closing dates. Set up automated follow-up workflows for leads.</field>
+            <field name="active" eval="True"/>
+            <field name="color">amber</field>
+        </record>
+        <record id="workflow_template_56" model="ai.workflow.template">
+            <field name="name">Real Estate - Commission</field>
+            <field name="sequence">50</field>
+            <field name="vertical_id">real_estate</field>
+            <field name="template_key">commission</field>
+            <field name="service_catalog_template">real_estate.json</field>
+            <field name="tips">Track commission splits and closing dates. Set up automated follow-up workflows for leads.</field>
+            <field name="active" eval="True"/>
+            <field name="color">amber</field>
+        </record>
+        <record id="workflow_template_57" model="ai.workflow.template">
+            <field name="name">Retail - Sale</field>
+            <field name="sequence">10</field>
+            <field name="vertical_id">retail</field>
+            <field name="template_key">sale</field>
+            <field name="service_catalog_template">retail.json</field>
+            <field name="tips">Set up auto-reorder thresholds for fast-moving items. Use customer loyalty points for repeat business.</field>
+            <field name="active" eval="True"/>
+            <field name="color">pink</field>
+        </record>
+        <record id="workflow_template_58" model="ai.workflow.template">
+            <field name="name">Retail - Inventory Update</field>
+            <field name="sequence">20</field>
+            <field name="vertical_id">retail</field>
+            <field name="template_key">inventory_update</field>
+            <field name="service_catalog_template">retail.json</field>
+            <field name="tips">Set up auto-reorder thresholds for fast-moving items. Use customer loyalty points for repeat business.</field>
+            <field name="active" eval="True"/>
+            <field name="color">pink</field>
+        </record>
+        <record id="workflow_template_59" model="ai.workflow.template">
+            <field name="name">Retail - Daily Report</field>
+            <field name="sequence">30</field>
+            <field name="vertical_id">retail</field>
+            <field name="template_key">daily_report</field>
+            <field name="service_catalog_template">retail.json</field>
+            <field name="tips">Set up auto-reorder thresholds for fast-moving items. Use customer loyalty points for repeat business.</field>
+            <field name="active" eval="True"/>
+            <field name="color">pink</field>
+        </record>
+        <record id="workflow_template_60" model="ai.workflow.template">
+            <field name="name">Retail - Reorder</field>
+            <field name="sequence">40</field>
+            <field name="vertical_id">retail</field>
+            <field name="template_key">reorder</field>
+            <field name="service_catalog_template">retail.json</field>
+            <field name="tips">Set up auto-reorder thresholds for fast-moving items. Use customer loyalty points for repeat business.</field>
+            <field name="active" eval="True"/>
+            <field name="color">pink</field>
+        </record>
+        <record id="workflow_template_61" model="ai.workflow.template">
+            <field name="name">Roofing - Inspection</field>
+            <field name="sequence">10</field>
+            <field name="vertical_id">roofing</field>
+            <field name="template_key">inspection</field>
+            <field name="service_catalog_template">roofing.json</field>
+            <field name="tips">Use estimate templates for common roof types. Track warranty periods and material warranties.</field>
+            <field name="active" eval="True"/>
+            <field name="color">orange</field>
+        </record>
+        <record id="workflow_template_62" model="ai.workflow.template">
+            <field name="name">Roofing - Estimate</field>
+            <field name="sequence">20</field>
+            <field name="vertical_id">roofing</field>
+            <field name="template_key">estimate</field>
+            <field name="service_catalog_template">roofing.json</field>
+            <field name="tips">Use estimate templates for common roof types. Track warranty periods and material warranties.</field>
+            <field name="active" eval="True"/>
+            <field name="color">orange</field>
+        </record>
+        <record id="workflow_template_63" model="ai.workflow.template">
+            <field name="name">Roofing - Approval</field>
+            <field name="sequence">30</field>
+            <field name="vertical_id">roofing</field>
+            <field name="template_key">approval</field>
+            <field name="service_catalog_template">roofing.json</field>
+            <field name="tips">Use estimate templates for common roof types. Track warranty periods and material warranties.</field>
+            <field name="active" eval="True"/>
+            <field name="color">orange</field>
+        </record>
+        <record id="workflow_template_64" model="ai.workflow.template">
+            <field name="name">Roofing - Install</field>
+            <field name="sequence">40</field>
+            <field name="vertical_id">roofing</field>
+            <field name="template_key">install</field>
+            <field name="service_catalog_template">roofing.json</field>
+            <field name="tips">Use estimate templates for common roof types. Track warranty periods and material warranties.</field>
+            <field name="active" eval="True"/>
+            <field name="color">orange</field>
+        </record>
+        <record id="workflow_template_65" model="ai.workflow.template">
+            <field name="name">Roofing - Invoice</field>
+            <field name="sequence">50</field>
+            <field name="vertical_id">roofing</field>
+            <field name="template_key">invoice</field>
+            <field name="service_catalog_template">roofing.json</field>
+            <field name="tips">Use estimate templates for common roof types. Track warranty periods and material warranties.</field>
+            <field name="active" eval="True"/>
+            <field name="color">orange</field>
+        </record>
+        <record id="workflow_template_66" model="ai.workflow.template">
+            <field name="name">Trucking - Load Assignment</field>
+            <field name="sequence">10</field>
+            <field name="vertical_id">trucking</field>
+            <field name="template_key">load_assignment</field>
+            <field name="service_catalog_template">trucking.json</field>
+            <field name="tips">Track DOT compliance and driver hours. Use fuel tracking for accurate job costing.</field>
+            <field name="active" eval="True"/>
+            <field name="color">indigo</field>
+        </record>
+        <record id="workflow_template_67" model="ai.workflow.template">
+            <field name="name">Trucking - Driver Dispatch</field>
+            <field name="sequence">20</field>
+            <field name="vertical_id">trucking</field>
+            <field name="template_key">driver_dispatch</field>
+            <field name="service_catalog_template">trucking.json</field>
+            <field name="tips">Track DOT compliance and driver hours. Use fuel tracking for accurate job costing.</field>
+            <field name="active" eval="True"/>
+            <field name="color">indigo</field>
+        </record>
+        <record id="workflow_template_68" model="ai.workflow.template">
+            <field name="name">Trucking - Route</field>
+            <field name="sequence">30</field>
+            <field name="vertical_id">trucking</field>
+            <field name="template_key">route</field>
+            <field name="service_catalog_template">trucking.json</field>
+            <field name="tips">Track DOT compliance and driver hours. Use fuel tracking for accurate job costing.</field>
+            <field name="active" eval="True"/>
+            <field name="color">indigo</field>
+        </record>
+        <record id="workflow_template_69" model="ai.workflow.template">
+            <field name="name">Trucking - Deliver</field>
+            <field name="sequence">40</field>
+            <field name="vertical_id">trucking</field>
+            <field name="template_key">deliver</field>
+            <field name="service_catalog_template">trucking.json</field>
+            <field name="tips">Track DOT compliance and driver hours. Use fuel tracking for accurate job costing.</field>
+            <field name="active" eval="True"/>
+            <field name="color">indigo</field>
+        </record>
+        <record id="workflow_template_70" model="ai.workflow.template">
+            <field name="name">Trucking - Invoice</field>
+            <field name="sequence">50</field>
+            <field name="vertical_id">trucking</field>
+            <field name="template_key">invoice</field>
+            <field name="service_catalog_template">trucking.json</field>
+            <field name="tips">Track DOT compliance and driver hours. Use fuel tracking for accurate job costing.</field>
+            <field name="active" eval="True"/>
+            <field name="color">indigo</field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="action_ai_workflow_template" model="ir.actions.act_window">
+        <field name="name">Workflow Templates</field>
+        <field name="res_model">ai.workflow.template</field>
+        <field name="view_mode">kanban,tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                No workflow templates yet.
+            </p>
+            <p>
+                50+ pre-built workflow templates from PantherHive are available. Click Sync from PantherHive to refresh.
+            </p>
+        </field>
+    </record>
+
+    <record id="ai_workflow_template_tree" model="ir.ui.view">
+        <field name="name">ai.workflow.template.tree</field>
+        <field name="model">ai.workflow.template</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+                <field name="vertical_id"/>
+                <field name="template_key"/>
+                <field name="color"/>
+                <field name="active"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="ai_workflow_template_form" model="ir.ui.view">
+        <field name="name">ai.workflow.template.form</field>
+        <field name="model">ai.workflow.template</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="vertical_id"/>
+                        <field name="template_key"/>
+                        <field name="service_catalog_template"/>
+                        <field name="color"/>
+                        <field name="active"/>
+                    </group>
+                    <group>
+                        <field name="tips"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="ai_workflow_template_kanban" model="ir.ui.view">
+        <field name="name">ai.workflow.template.kanban</field>
+        <field name="model">ai.workflow.template</field>
+        <field name="arch" type="xml">
+            <kanban default_group_by="vertical_id">
+                <field name="name"/>
+                <field name="vertical_id"/>
+                <field name="color"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="oe_kanban_card oe_kanban_color_#{kanban_getcolor(record.color.raw_value)}">
+                            <div class="oe_kanban_content">
+                                <strong><field name="name"/></strong>
+                                <div class="text-muted"><field name="template_key"/></div>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="action_sync_workflow_templates" model="ir.actions.server">
+        <field name="name">Sync from PantherHive</field>
+        <field name="model_id" ref="model_ai_workflow_template"/>
+        <field name="binding_model_id" ref="model_ai_workflow_template"/>
+        <field name="state">code</field>
+        <field name="code">
+            action = env['ai.workflow.template'].sync_from_pantherhive()
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="action_ai_dashboard_template" model="ir.actions.act_window">
+        <field name="name">UI Variations</field>
+        <field name="res_model">ai.dashboard.template</field>
+        <field name="view_mode">kanban,tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                No UI variations yet.
+            </p>
+            <p>
+                100 built-in dashboard variations are generated automatically at install.
+            </p>
+        </field>
+    </record>
+
+    <record id="ai_dashboard_template_tree" model="ir.ui.view">
+        <field name="name">ai.dashboard.template.tree</field>
+        <field name="model">ai.dashboard.template</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+                <field name="workflow_template_id"/>
+                <field name="font_family"/>
+                <field name="color"/>
+                <field name="active"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="ai_dashboard_template_form" model="ir.ui.view">
+        <field name="name">ai.dashboard.template.form</field>
+        <field name="model">ai.dashboard.template</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="workflow_template_id"/>
+                        <field name="font_family"/>
+                        <field name="color"/>
+                        <field name="active"/>
+                    </group>
+                    <group>
+                        <field name="layout"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="ai_dashboard_template_kanban" model="ir.ui.view">
+        <field name="name">ai.dashboard.template.kanban</field>
+        <field name="model">ai.dashboard.template</field>
+        <field name="arch" type="xml">
+            <kanban default_group_by="color">
+                <field name="name"/>
+                <field name="font_family"/>
+                <field name="color"/>
+                <field name="workflow_template_id"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="oe_kanban_card oe_kanban_color_#{kanban_getcolor(record.color.raw_value)}">
+                            <div class="oe_kanban_content">
+                                <strong><field name="name"/></strong>
+                                <div class="text-muted"><field name="font_family"/></div>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="action_regenerate_dashboard_templates" model="ir.actions.server">
+        <field name="name">Regenerate 100 UI Variations</field>
+        <field name="model_id" ref="model_ai_dashboard_template"/>
+        <field name="binding_model_id" ref="model_ai_dashboard_template"/>
+        <field name="state">code</field>
+        <field name="code">
+            count = env['ai.dashboard.template']._generate_variations()
+            action = {
+                'type': 'ir.actions.client',
+                'tag': 'display_notification',
+                'params': {
+                    'title': 'Variations Generated',
+                    'message': f'{count} UI variations generated.',
+                    'type': 'success',
+                }
+            }
+        </field>
+    </record>
+</odoo>

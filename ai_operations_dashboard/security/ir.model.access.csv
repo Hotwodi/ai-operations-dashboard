@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_ai_automation_rule_user,AI Automation Rule User,model_ai_automation_rule,base.group_user,1,0,0,0
+access_ai_automation_rule_manager,AI Automation Rule Manager,model_ai_automation_rule,base.group_system,1,1,1,1
+access_ai_dashboard_metric_user,AI Dashboard Metric User,model_ai_dashboard_metric,base.group_user,1,0,0,0
+access_ai_dashboard_metric_manager,AI Dashboard Metric Manager,model_ai_dashboard_metric,base.group_system,1,1,1,1
+access_ai_workflow_template_user,AI Workflow Template User,model_ai_workflow_template,base.group_user,1,0,0,0
+access_ai_workflow_template_manager,AI Workflow Template Manager,model_ai_workflow_template,base.group_system,1,1,1,1
+access_ai_dashboard_template_user,AI Dashboard Template User,model_ai_dashboard_template,base.group_user,1,0,0,0
+access_ai_dashboard_template_manager,AI Dashboard Template Manager,model_ai_dashboard_template,base.group_system,1,1,1,1

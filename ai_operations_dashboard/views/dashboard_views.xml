@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="action_ai_dashboard" model="ir.actions.act_window">
+            <field name="name">AI Operations Dashboard</field>
+            <field name="res_model">ai.dashboard.metric</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record id="view_ai_dashboard_metric_tree" model="ir.ui.view">
+            <field name="name">ai.dashboard.metric.tree</field>
+            <field name="model">ai.dashboard.metric</field>
+            <field name="arch" type="xml">
+                <tree string="Dashboard Metrics">
+                    <field name="sequence" widget="handle"/>
+                    <field name="name"/>
+                    <field name="model_id"/>
+                    <field name="aggregate"/>
+                    <field name="value" readonly="1"/>
+                    <field name="last_computed" readonly="1"/>
+                    <field name="active"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_ai_dashboard_metric_form" model="ir.ui.view">
+            <field name="name">ai.dashboard.metric.form</field>
+            <field name="model">ai.dashboard.metric</field>
+            <field name="arch" type="xml">
+                <form string="Dashboard Metric">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="sequence"/>
+                            <field name="model_id"/>
+                            <field name="measure_field"/>
+                            <field name="group_field"/>
+                            <field name="aggregate"/>
+                            <field name="color"/>
+                            <field name="active"/>
+                            <field name="value" readonly="1"/>
+                            <field name="last_computed" readonly="1"/>
+                            <field name="note"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

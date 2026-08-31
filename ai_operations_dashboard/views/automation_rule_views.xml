@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="action_ai_automation_rules" model="ir.actions.act_window">
+            <field name="name">Automation Rules</field>
+            <field name="res_model">ai.automation.rule</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record id="view_ai_automation_rule_tree" model="ir.ui.view">
+            <field name="name">ai.automation.rule.tree</field>
+            <field name="model">ai.automation.rule</field>
+            <field name="arch" type="xml">
+                <tree string="AI Automation Rules">
+                    <field name="sequence" widget="handle"/>
+                    <field name="name"/>
+                    <field name="model_id"/>
+                    <field name="trigger"/>
+                    <field name="action_type"/>
+                    <field name="active"/>
+                    <field name="last_run"/>
+                    <field name="run_count"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_ai_automation_rule_form" model="ir.ui.view">
+            <field name="name">ai.automation.rule.form</field>
+            <field name="model">ai.automation.rule</field>
+            <field name="arch" type="xml">
+                <form string="AI Automation Rule">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="active"/>
+                            <field name="sequence"/>
+                            <field name="model_id"/>
+                            <field name="trigger"/>
+                            <field name="condition_field" attrs="{'invisible': [('trigger','!=','on_write')]}"/>
+                            <field name="domain"/>
+                            <field name="action_type"/>
+                            <field name="action_field" attrs="{'invisible': [('action_type','!=','update_field')]}"/>
+                            <field name="action_value" attrs="{'invisible': [('action_type','not in',['update_field','create_record'])]}"/>
+                            <field name="action_model_id" attrs="{'invisible': [('action_type','!=','create_record')]}" domain="[('model','!=',False)]"/>
+                            <field name="action_values" attrs="{'invisible': [('action_type','!=','create_record')]}"/>
+                            <field name="webhook_url" attrs="{'invisible': [('action_type','!=','webhook')]}"/>
+                            <field name="ai_prompt" attrs="{'invisible': [('action_type','!=','ai_insight')]}"/>
+                            <field name="last_run" readonly="1"/>
+                            <field name="run_count" readonly="1"/>
+                            <field name="note"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

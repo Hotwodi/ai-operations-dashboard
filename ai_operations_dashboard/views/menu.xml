@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="ai_operations_menu_root" model="ir.ui.menu">
+            <field name="name">AI Operations</field>
+            <field name="sequence">50</field>
+        </record>
+
+        <record id="ai_dashboard_menu" model="ir.ui.menu">
+            <field name="name">Dashboard</field>
+            <field name="parent_id" ref="ai_operations_menu_root"/>
+            <field name="action" ref="action_ai_dashboard"/>
+            <field name="sequence">10</field>
+        </record>
+
+        <record id="ai_automation_rules_menu" model="ir.ui.menu">
+            <field name="name">Automation Rules</field>
+            <field name="parent_id" ref="ai_operations_menu_root"/>
+            <field name="action" ref="action_ai_automation_rules"/>
+            <field name="sequence">20</field>
+        </record>
+
+        <record id="ai_workflow_templates_menu" model="ir.ui.menu">
+            <field name="name">Workflow Templates</field>
+            <field name="parent_id" ref="ai_operations_menu_root"/>
+            <field name="action" ref="action_ai_workflow_template"/>
+            <field name="sequence">25</field>
+        </record>
+
+        <record id="ai_dashboard_templates_menu" model="ir.ui.menu">
+            <field name="name">UI Variations</field>
+            <field name="parent_id" ref="ai_operations_menu_root"/>
+            <field name="action" ref="action_ai_dashboard_template"/>
+            <field name="sequence">26</field>
+        </record>
+
+        <record id="ai_settings_menu" model="ir.ui.menu">
+            <field name="name">Settings</field>
+            <field name="parent_id" ref="ai_operations_menu_root"/>
+            <field name="action" ref="action_ai_config_settings"/>
+            <field name="sequence">30</field>
+        </record>
+    </data>
+</odoo>
