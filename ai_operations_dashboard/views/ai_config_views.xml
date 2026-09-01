@@ -15,33 +15,20 @@
             <field name="priority">100</field>
             <field name="inherit_id" ref="base.res_config_settings_view_form"/>
             <field name="arch" type="xml">
-                <xpath expr="//div[hasclass('settings')][1]" position="inside">
-                    <h2>AI Operations</h2>
-                    <div class="row mt16 o_settings_container">
-                        <div class="col-12 col-lg-6 o_setting_box">
-                            <div class="o_setting_right_pane">
-                                <span class="o_form_label">AI Provider</span>
-                                <div class="text-muted">Choose the AI provider for insights and automation.</div>
-                                <div class="content-group">
-                                    <field name="ai_provider" class="o_light_label" widget="selection"/>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-lg-6 o_setting_box">
-                            <div class="o_setting_right_pane">
-                                <span class="o_form_label">API Key</span>
-                                <div class="text-muted">The API key for the selected provider.</div>
-                                <field name="ai_api_key" password="True" class="o_light_label"/>
-                            </div>
-                        </div>
-                        <div class="col-12 col-lg-6 o_setting_box">
-                            <div class="o_setting_right_pane">
-                                <span class="o_form_label">Model</span>
-                                <div class="text-muted">Model name (e.g., gpt-4o, claude-3-5-sonnet).</div>
-                                <field name="ai_model" class="o_light_label"/>
-                            </div>
-                        </div>
-                    </div>
+                <xpath expr="//form" position="inside">
+                    <app string="AI Operations" name="ai_operations_dashboard">
+                        <block title="AI Configuration" name="ai_config_container">
+                            <setting id="ai_provider" string="AI Provider" help="Choose the AI provider for insights and automation.">
+                                <field name="ai_provider" widget="selection"/>
+                            </setting>
+                            <setting id="ai_api_key" string="API Key" help="The API key for the selected provider.">
+                                <field name="ai_api_key" password="True"/>
+                            </setting>
+                            <setting id="ai_model" string="Model" help="Model name (e.g., gpt-4o, claude-3-5-sonnet).">
+                                <field name="ai_model"/>
+                            </setting>
+                        </block>
+                    </app>
                 </xpath>
             </field>
         </record>

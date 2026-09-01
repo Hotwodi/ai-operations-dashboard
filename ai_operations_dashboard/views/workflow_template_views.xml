@@ -3,7 +3,7 @@
     <record id="action_ai_workflow_template" model="ir.actions.act_window">
         <field name="name">Workflow Templates</field>
         <field name="res_model">ai.workflow.template</field>
-        <field name="view_mode">kanban,tree,form</field>
+        <field name="view_mode">kanban,list,form</field>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">
                 No workflow templates yet.
@@ -18,14 +18,14 @@
         <field name="name">ai.workflow.template.tree</field>
         <field name="model">ai.workflow.template</field>
         <field name="arch" type="xml">
-            <tree>
+            <list>
                 <field name="sequence" widget="handle"/>
                 <field name="name"/>
                 <field name="vertical_id"/>
                 <field name="template_key"/>
                 <field name="color"/>
                 <field name="active"/>
-            </tree>
+            </list>
         </field>
     </record>
 

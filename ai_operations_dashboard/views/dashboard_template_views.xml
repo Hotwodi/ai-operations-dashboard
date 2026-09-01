@@ -3,7 +3,7 @@
     <record id="action_ai_dashboard_template" model="ir.actions.act_window">
         <field name="name">UI Variations</field>
         <field name="res_model">ai.dashboard.template</field>
-        <field name="view_mode">kanban,tree,form</field>
+        <field name="view_mode">kanban,list,form</field>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">
                 No UI variations yet.
@@ -18,14 +18,14 @@
         <field name="name">ai.dashboard.template.tree</field>
         <field name="model">ai.dashboard.template</field>
         <field name="arch" type="xml">
-            <tree>
+            <list>
                 <field name="sequence" widget="handle"/>
                 <field name="name"/>
                 <field name="workflow_template_id"/>
                 <field name="font_family"/>
                 <field name="color"/>
                 <field name="active"/>
-            </tree>
+            </list>
         </field>
     </record>
 
@@ -79,16 +79,16 @@
         <field name="binding_model_id" ref="model_ai_dashboard_template"/>
         <field name="state">code</field>
         <field name="code">
-            count = env['ai.dashboard.template']._generate_variations()
-            action = {
-                'type': 'ir.actions.client',
-                'tag': 'display_notification',
-                'params': {
-                    'title': 'Variations Generated',
-                    'message': f'{count} UI variations generated.',
-                    'type': 'success',
-                }
-            }
+count = env['ai.dashboard.template']._generate_variations()
+action = {
+    'type': 'ir.actions.client',
+    'tag': 'display_notification',
+    'params': {
+        'title': 'Variations Generated',
+        'message': f'{count} UI variations generated.',
+        'type': 'success',
+    }
+}
         </field>
     </record>
 </odoo>

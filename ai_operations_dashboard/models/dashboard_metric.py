@@ -8,7 +8,7 @@ class AIDashboardMetric(models.Model):
 
     name = fields.Char(string='Metric Name', required=True)
     sequence = fields.Integer(default=10)
-    model_id = fields.Many2one('ir.model', string='Model', required=True)
+    model_id = fields.Many2one('ir.model', string='Model', required=True, ondelete='cascade')
     measure_field = fields.Char(string='Measure Field', required=True, help='Numeric field to aggregate')
     group_field = fields.Char(string='Group By Field')
     aggregate = fields.Selection([
